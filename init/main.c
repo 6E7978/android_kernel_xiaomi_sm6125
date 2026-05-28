@@ -585,20 +585,20 @@ asmlinkage __visible void __init start_kernel(void)
 	p = strstr(command_line, "androidboot.fpsensor=fpc");
 	if (p) {
 		fpsensor = 1; /* fpc fingerprint */
-		printk("I am fpc fingerprint");
+		printk("Using FPC fingerprint");
 	} else {
 		fpsensor = 2; /* goodix fingerprint */
-		printk("I am goodix fingerprint");
+		printk("Using Goodix fingerprint");
 	}
 
 	p = NULL;
 	p = strstr(command_line, "androidboot.hwversion=2");
 	if (p) {
 		lct_hardwareid = 2;
-		printk("I am new board for imx582 camera");
+		printk("Using new C3J board");
 	} else {
 		lct_hardwareid = 0;
-		printk("I am old board for imx582 camera");
+		printk("Using old C3J board");
 	}
 #endif
 
